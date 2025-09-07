@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Speed Test Game</title>
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <div class="game">
+      <!-- Header -->
+      <h2 class="name">Typing Speed Test Game</h2>
+
+      <!-- Level & Settings -->
+      <div class="settings">
+        <label for="level-select">Choose Level:</label>
+        <select id="level-select">
+          <option value="Easy">Easy</option>
+          <option value="Normal" selected>Normal</option>
+          <option value="Hard">Hard</option>
+        </select>
+      </div>
+
+      <!-- Main Container -->
+      <main class="container">
+        <div class="message">
+          You Are Playing On
+          <span class="lvl">Normal</span> Level & You Have
+          <span class="seconds">6</span> Seconds To Type Each Word
+        </div>
+
+        <button class="start">Start Playing</button>
+
+        <div class="countdown"></div>
+
+        <div class="the-word">word</div>
+
+        <input type="text" class="input" placeholder="Type the word here..." />
+
+        <div class="upcoming-words"></div>
+
+        <div class="control">
+          <div class="time">Time Left : <span>6</span> seconds</div>
+          <div class="score">
+            Score : <span class="got">0</span> From
+            <span class="total">0</span>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div class="finish"></div>
+        <button class="restart" style="display: none">Restart</button>
+      </main>
+    </div>
+
+    <!-- Script -->
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-color: #6c63ff;
+  --dark-bg: #12131a;
+  --dark-card: #1c1f2b;
+  --text-light: #ffffff;
+  --danger: #ff4b4b;
+  --success: #00ff90;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+}
+
+.game {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  background-color: var(--main-color);
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.settings {
+  margin: 15px;
+  font-size: 16px;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.message {
+  background-color: var(--dark-card);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
+}
+
+.message span {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+.message span::before {
+  content: "[ ";
+}
+
+.message span::after {
+  content: " ]";
+}
+
+.start,
+.restart {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 50px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
+}
+
+.the-word {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--main-color);
+  margin-bottom: 15px;
+  background-color: var(--dark-card);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
+  user-select: none;
+}
+
+.input {
+  width: 100%;
+  padding: 15px;
+  border: 4px solid var(--main-color);
+  border-radius: 50px;
+  font-size: 20px;
+  background-color: var(--dark-bg);
+  color: white;
+  text-align: center;
+  margin-bottom: 15px;
+  outline: none;
+  caret-color: var(--main-color);
+}
+
+.upcoming-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--dark-card);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
+}
+
+.upcoming-words div {
+  background-color: var(--main-color);
+  color: white;
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--dark-card);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
+  margin-bottom: 10px;
+}
+
+.control span {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.finish {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+.finish .good {
+  color: var(--success);
+}
+
+.finish .bad {
+  color: var(--danger);
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #333;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--main-color);
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+/*/////////*/
+/* Style select dropdown */
+.settings select {
+  padding: 8px 16px;
+  background-color: var(--dark-card);
+  color: var(--text-light);
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Disabled select */
+.settings select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Add arrow icon via background */
+.settings {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.settings select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2210%22%20height%3D%227%22%20viewBox%3D%220%200%2010%207%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M1%200l4%204%204-4%22%20fill%3D%22%23ffffff%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 7px;
+  padding-right: 30px;
+}
+
+/*/////////*/
+
+/* Responsive */
+@media (max-width: 768px) {
+  .the-word {
+    font-size: 36px;
+  }
+
+  .input {
+    font-size: 18px;
+  }
+
+  .start,
+  .restart {
+    font-size: 16px;
+    padding: 10px 30px;
+  }
+
+  .control {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
